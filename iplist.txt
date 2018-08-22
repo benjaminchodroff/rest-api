@@ -1,0 +1,12 @@
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2017-09-28 10:59 CST
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2017-09-28 11:00 CST
+Nmap scan report for 192.168.1.12
+Host is up (0.0015s latency).
+Nmap done: 256 IP addresses (1 host up) scanned in 0.02 seconds
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2017-09-28 11:01 CST
+Nmap scan report for 192.168.1.12
+Host is up (0.0016s latency).
+Nmap done: 65536 IP addresses (1 host up) scanned in 5.66 seconds
