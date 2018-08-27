@@ -17,6 +17,7 @@
     base_min_size:string;
   }
 ]
+```
 
 <a name='def-api-trade-market-last-price'></a>
 ## GetMarketLastPrice
