@@ -1,5 +1,50 @@
-Public API
-<a name='def-api-utils-get-market'></a>
+# Public Rest API for ExCraft (2018-8-28)
+请求地址：https://www.excraft.com
+
+# 错误信息：
+错误信息包含在http请求头<br>
+grpc-status：错误码<br>
+grpc-message：错误详情信息<br>
+```python
+code = response.headers[grpc-status]
+details = response.headers[grpc-message]
+```
+
+# 变量说明：
+## 方向
+| Value	| Meaning |
+| :-----: | :-------: |
+| 1	| Sell |
+| 2	| Buy |
+
+## 订单类型
+| Value	| Meaning |
+| :-----: | :-------: |
+| 1	| Limit |
+| 2	| Market |
+
+## 订单角色
+| Value	| Meaning |
+| :-----: | :-------: |
+| 1	| Maker |
+| 2	| Taker |
+
+# K线时间间隔
+| Value	| Meaning |
+| :-----: | :-------: |
+| 60	| 1 min |
+| 300	| 5 min | 
+| 900	| 15 min |
+| 1800	| 30min |
+| 3600	| 1 hour |
+| 7200	| 2 hours |
+| 14400	| 4 hours |
+| 21600	| 6 hours |
+| 28800	| 8 hours |
+| 86400	| 1 day |
+| 604800	| 1 week |
+
+# Public API
 ## 1 GetMarketList
 获取支持的交易对<br>
 /apis/trading/v1/markets<br>
@@ -20,7 +65,6 @@ Public API
 ]
 ```
 
-<a name='def-api-trade-market-last-price'></a>
 ## 2 GetMarketLastPrice
 获取最近一次市场价格<br>
 /apis/trading/v1/markets/{market}/last_price<br>
@@ -33,7 +77,6 @@ Public API
 }
 ```
 
-<a name='def-api-trade-market-get-trades'></a>
 ## 3 GetMarketTrades
 获取最近成交纪录<br>
 /apis/trading/v1/markets/{market}/trades<br>
@@ -59,7 +102,6 @@ json_encode{
 ]
 ```
 
-<a name='def-api-trade-get-depth'></a>
 ## 4 GetDepth
 获取交易挂单<br>
 /apis/trading/v1/markets/{market}/depth<br>
@@ -91,7 +133,6 @@ json_encode{
 ```
 
 
-<a name='def-api-trade-market-get-candles'></a>
 ## 5 GetMarketCandles
 获取交易k线图<br>
 /apis/trading/v1/markets/{market}/candles<br>
