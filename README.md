@@ -1,3 +1,23 @@
+<a name='def-api-utils-get-market'></a>
+## GetMarketList
+获取支持的交易对<br>
+/apis/trading/v1/markets<br>
+请求参数：无<br>
+请求类型：get<br>
+返回结果：<br>
+```python
+[
+  {
+    name:string;
+    base:string;
+    quote:string;
+    fee_prec:int32;
+    base_prec:int32;
+    quote_prec:int32;
+    base_min_size:string;
+  }
+]
+
 <a name='def-api-trade-market-last-price'></a>
 ## GetMarketLastPrice
 获取最近一次市场价格<br>
