@@ -1,5 +1,6 @@
+Public API
 <a name='def-api-utils-get-market'></a>
-## GetMarketList
+## 1 GetMarketList
 获取支持的交易对<br>
 /apis/trading/v1/markets<br>
 请求参数：无<br>
@@ -20,7 +21,7 @@
 ```
 
 <a name='def-api-trade-market-last-price'></a>
-## GetMarketLastPrice
+## 2 GetMarketLastPrice
 获取最近一次市场价格<br>
 /apis/trading/v1/markets/{market}/last_price<br>
 请求参数：无<br>
@@ -33,7 +34,7 @@
 ```
 
 <a name='def-api-trade-market-get-trades'></a>
-## GetMarketTrades
+## 3 GetMarketTrades
 获取最近成交纪录<br>
 /apis/trading/v1/markets/{market}/trades<br>
 请求参数：<br>
@@ -59,7 +60,7 @@ json_encode{
 ```
 
 <a name='def-api-trade-get-depth'></a>
-## GetDepth
+## 4 GetDepth
 获取交易挂单<br>
 /apis/trading/v1/markets/{market}/depth<br>
 请求参数：<br>
@@ -91,7 +92,7 @@ json_encode{
 
 
 <a name='def-api-trade-market-get-candles'></a>
-## GetMarketCandles
+## 5 GetMarketCandles
 获取交易k线图<br>
 /apis/trading/v1/markets/{market}/candles<br>
 请求参数：<br>
