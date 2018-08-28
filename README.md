@@ -1,56 +1,58 @@
-# Public Rest API for ExCraft (2018-8-28)
-请求地址：https://www.excraft.com
+# Public REST API for ExCraft (2018-8-28)
+Request address：https://www.excraft.com
 
-# 错误信息：
-错误信息包含在http请求头<br>
-grpc-status：错误码<br>
-grpc-message：错误详情信息<br>
+*Read this in other languages: [English](README.md), [한국어](README.ko.md), [简体中文](README.zh-cn.md), [繁體中文](README.zh-hk.md).*
+
+# Error Message：
+The error message is included in the http request header<br>
+grpc-status: error code<br>
+grpc-message: Error details<br>
 ```python
 code = response.headers[grpc-status]
 details = response.headers[grpc-message]
 ```
 
-# 变量说明：
-## 方向
+# Variable Description：
+## Direction
 | Value	| Meaning |
 | :-----: | :-------: |
 | 1	| Sell |
 | 2	| Buy |
 
-## 订单类型
+## Order Type
 | Value	| Meaning |
 | :-----: | :-------: |
 | 1	| Limit |
 | 2	| Market |
 
-## 订单角色
+## Order Role
 | Value	| Meaning |
 | :-----: | :-------: |
 | 1	| Maker |
 | 2	| Taker |
 
-# K线时间间隔
+# K-Line Time Interval
 | Value	| Meaning |
 | :-----: | :-------: |
-| 60	| 1 min |
-| 300	| 5 min | 
-| 900	| 15 min |
-| 1800	| 30min |
-| 3600	| 1 hour |
+| 60	| 1 min   |
+| 300	| 5 min   | 
+| 900	| 15 min  |
+| 1800	| 30 min  |
+| 3600	| 1 hour  |
 | 7200	| 2 hours |
 | 14400	| 4 hours |
 | 21600	| 6 hours |
 | 28800	| 8 hours |
-| 86400	| 1 day |
-| 604800	| 1 week |
+| 86400	| 1 day   |
+| 604800| 1 week  |
 
 # Public API
 ## 1 GetMarketList
-获取支持的交易对<br>
+Get supported transaction pairs<br>
 /apis/trading/v1/markets<br>
-请求参数：无<br>
-请求类型：get<br>
-返回结果：<br>
+Request parameters: no <br>
+Request type: get<br>
+Return result:<br>
 ```python
 [
   {
@@ -66,38 +68,21 @@ details = response.headers[grpc-message]
 ```
 
 ## 2 GetMarketLastPrice
-获取最近一次市场价格<br>
+Get the latest market price<br>
 /apis/trading/v1/markets/{market}/last_price<br>
-请求参数：无<br>
-请求类型：get<br>
-返回结果：<br>
+Request parameters: no <br>
+Request type: get<br>
+Return result:<br>
 ```python
 {
   price:string;
 }
 ```
 
-## 3 GetMarketStatusToday
-获取24小时交易对状态<br>
-/apis/trading/v1/markets/{market}/status_today<br>
-请求参数：无<br>
-请求类型：get<br>
-返回结果：<br>
-```python
-{
-  last:string;
-  open:string;
-  close:string;
-  high:string;
-  low:string;
-  volume:string;
-}
-```
-
-## 4 GetMarketTrades
-获取最近成交纪录<br>
+## 3 GetMarketTrades
+Get recent transaction record<br>
 /apis/trading/v1/markets/{market}/trades<br>
-请求参数：<br>
+Request parameters: <br>
 ```python
 json_encode{
   market:string;
@@ -105,8 +90,8 @@ json_encode{
   last_id:int32;
 }
 ```
-请求类型：get<br>
-返回结果：<br>
+Request type: get<br>
+Return result:<br>
 ```python
 [
     {
@@ -119,10 +104,10 @@ json_encode{
 ]
 ```
 
-## 5 GetDepth
-获取交易挂单<br>
+## 4 GetDepth
+Get the transaction pending order<br>
 /apis/trading/v1/markets/{market}/depth<br>
-请求参数：<br>
+Request parameters: <br>
 ```python
 json_encode{
   market:string;
@@ -130,17 +115,17 @@ json_encode{
   merge:string;
 }
 ```
-请求类型：get<br>
-返回结果：<br>
+Request type: get<br>
+Return result:<br>
 ```python
 {
-  asks:[            //卖单
+  asks:[            //Sell orders
     {
       price:string;
       amount:string;
     }
   ],
-  bids:[            //买单
+  bids:[            //Buy orders
     {
       price:string;
       amount:string;
@@ -150,10 +135,10 @@ json_encode{
 ```
 
 
-## 6 GetMarketCandles
-获取交易k线图<br>
+## 5 GetMarketCandles
+Get the transaction k-line chart<br>
 /apis/trading/v1/markets/{market}/candles<br>
-请求参数：<br>
+Request parameters: <br>
 ```python
 json_encode{
   market:string;
@@ -162,8 +147,8 @@ json_encode{
   time_frame:int32;
 }
 ```
-请求类型：get<br>
-返回结果：<br>
+Request type: get<br>
+Return result:<br>
 ```python
 [
   {
