@@ -31,8 +31,13 @@ class ExCraftApi:
         if err is None:
             return ret.json()
 
-    def get_ticker(self, market):
+    def get_last_price(self, market):
         ret, err = self.api_call(url=self.HTTP_HOST + '/apis/trading/v1/markets/' + market + '/last_price')
+        if err is None:
+            return ret.json()
+
+    def get_ticker(self, market):
+        ret, err = self.api_call(url=self.HTTP_HOST + '/apis/trading/v1/markets/' + market + '/status_today')
         if err is None:
             return ret.json()
 

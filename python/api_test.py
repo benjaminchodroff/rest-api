@@ -11,6 +11,10 @@ result = api.get_market()
 print(result)
 
 # get ticker
+result = api.get_last_price("ETHBTC")
+print(result)
+
+# get ticker
 result = api.get_ticker("ETHBTC")
 print(result)
 
